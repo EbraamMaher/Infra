@@ -1,0 +1,50 @@
+pipeline {
+
+    agent {label 'agent'}
+
+    stages{
+        stage('Build') {
+          steps {
+            script {
+              withCredentials([usernamePassword(credentialsId: 'docker', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) { 
+
+              sh """
+                docker login -u ${USERNAME} -p ${PASSWORD}
+                docker build .  -t ebraammaher/webapp:V${BUILD_NUMBER}
+                docker images
+                docker push ebraammaher/webapp:V${BUILD_NUMBER}
+                echo ${BUILD_NUMBER} > bn.txt
+                """
+                    }
+                        } 
+                }
+            }
+    
+
+        stage('Deploy') {
+          steps{
+            script {
+                 withCredentials([file(credentialsId: 'gcp-credentials', variable: 'gc')]){
+                            sh """
+                             gcloud auth activate-service-account --key-file="$gc"
+                             gcloud container clusters get-credentials app-cluster --region europe-west3 --project gproject-368612
+                             export BUILD_NUMBER=\$(cat bn.txt)
+                             mv deployment.yaml deployment.yaml.tmp
+                             ls
+                             cat deployment.yaml.tmp | envsubst > deployment.yaml
+                             rm -f deployment.yaml.tmp
+                             kubectl apply -f deployment.yaml
+                            """
+                          
+                             
+
+                            
+                }
+
+              }
+            }
+          }
+        }
+
+}
+        
