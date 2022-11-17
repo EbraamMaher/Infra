@@ -1,0 +1,1 @@
+{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"bastion","Source":"./bastion","Dir":"bastion"},{"Key":"google_networks","Source":"./network","Dir":"network"},{"Key":"google_kubernetes_cluster","Source":"./kubernetes_cluster","Dir":"kubernetes_cluster"}]}
