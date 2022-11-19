@@ -40,4 +40,4 @@ by getting the external ip and port you can access the app :
 ```
 ## Screenshots
 
-![App Screenshot](https://drive.google.com/file/d/1j8dma7k7Bs5rnbXg1KIxbT2ySZjjTiVX/view?usp=share_link)
+![App Screenshot](Screenshot (1483).png)
