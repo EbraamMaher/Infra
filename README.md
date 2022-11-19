@@ -47,6 +47,9 @@ at the end of infra structure creation you will get 2 gcloud commands:
 1- install docker  : https://docs.docker.com/engine/install/debian/
 2- install keubctl : https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
 
+###### check :
+![App Screenshot](https://github.com/EbraamMaher/Infra/blob/master/pictures/4.png)
+![App Screenshot](https://github.com/EbraamMaher/Infra/blob/master/pictures/5.png)
 ###### then authenticate your account : 
 ```gcloud
    gcloud auth login
@@ -55,16 +58,24 @@ at the end of infra structure creation you will get 2 gcloud commands:
 ###### then connect to the cluster using the *2nd command printed out* after terraform created all resources.
 
 ##### deploy jenkins as a pod in a dedicated namespace : 
-	```kubectl
+
+
+```kubectl
 	kubectl create ns ns-jenkins
 	kubectl apply -f master.yaml  
 	keubctl get svc -n ns-jenkins
-	```
-	
+```
+
 then access jenkins using url : http://external ip :port
 to get initial password for jenknis : kubect logs <pod-name> -n ns-jenkins
 
-then install plugins and put credentails for docker hub and gcloud which we will need later 
+then install plugins and put credentails for docker hub and gcloud which we will need later
+then access jenkins using url : http://external ip :port
+to get initial password for jenknis : kubect logs <pod-name> -n ns-jenkins
+
+###### then install plugins and put credentails for docker hub and gcloud which we will need later 
+
+	
 
 
 ###### after that Deployment stage using kubectl
@@ -75,6 +86,9 @@ by getting the external ip and port you can access the app :
   kubectl get pods -n app
   kubectl get svc -n app
 ```
+	
+	
+	
 ## Project graph
 
 pictures credits :
