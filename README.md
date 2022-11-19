@@ -62,10 +62,10 @@ at the end of infra structure creation you will get 2 gcloud commands:
    gcloud auth login
 ```
 
-###### then connect to the cluster using the *2nd command printed out* after terraform created all resources.
+###### then connect to the cluster using the **2nd command printed out** after terraform created all resources.
 
 
-###### check :
+##### check :
 ![App Screenshot](https://github.com/EbraamMaher/Infra/blob/master/pictures/4.png)
 ![App Screenshot](https://github.com/EbraamMaher/Infra/blob/master/pictures/5.png)
 
@@ -81,7 +81,7 @@ at the end of infra structure creation you will get 2 gcloud commands:
 
 ###### then access jenkins using url : http://external ip :port
 
-###### check :
+##### check :
 ![App Screenshot](https://github.com/EbraamMaher/Infra/blob/master/pictures/6.png)
 
 
@@ -93,7 +93,7 @@ to get initial password for jenknis :
 
 then install plugins and put credentails for *docker hub* and *GCP* which we will need later
 
-###### now access jenkins using url : *http://external_ip:port*
+###### now access jenkins using url : **http://external_ip:port**
 
 *note*: to get initial password for jenknis : kubect logs <pod-name> -n ns-jenkins
 
@@ -102,19 +102,38 @@ then install plugins and put credentails for *docker hub* and *GCP* which we wil
 	
 ##### Jenkins Agent
 
-we now need to create and build agent *noting that it needs many tools like gcloud , docker,kubernetes "helm if needed " and ssh
+we now need to create and build agent **noting that** it needs many tools like gcloud , docker,kubernetes "helm if needed " and ssh
 
-so,now we have to login to docker hub *since we need to push agent image to allow GKE to pull it when deploying the agent*
+so,now we have to login to docker hub **since we need to push agent image to allow GKE to pull it when deploying the agent**
 
 then build the image and push it to docker hub 
-kubectl apply -f slave.yaml  
-kubectl exec -it <pod-name> bash -n ns-jenkins
+```kubectl 
+	kubectl apply -f slave.yaml  
+	kubectl exec -it <pod-name> bash -n ns-jenkins
+```
+	
 now we can configure the agnet
 
-==note : have to check that ssh is running using this command 
-      service ssh status
+**Note** : have to check that ssh is running using this command 
+```linux
+	service ssh status
+
 and if not running start it : 
      service ssh start
-or /etc/init.d/ssh start
-also you may have issue with docker.sock and can solve it by changing permission for /var/run/docke.sock	
+  or /etc/init.d/ssh start
+```
+also we may have issue with docker.sock and can solve it by changing permission for **/var/run/docke.sock**
+
+##### check :
+![App Screenshot](https://github.com/EbraamMaher/Infra/blob/master/pictures/7.png)
+	
+
+### Application phase [build and deploy]:
+
+	##### now we can build our pipline and configure github with jenkins to trigger the process with each push on app repo **https://github.com/EbraamMaher/web-app/tree/main**
+
+
+
+
+![App Screenshot](https://github.com/EbraamMaher/Infra/blob/master/pictures/app.gif)
 	
