@@ -53,7 +53,7 @@ by getting the external ip and port you can access the app :
 ```
 ## Project graph
 
-credits :
+pictures credits :
 #### Creditis : https://cloud.google.com/blog/products/devops-sre/guide-to-creating-custom-base-images-for-gcp-with-jenkins-and-packer
    #### https://janpreet.com/tech/2020/12/08/terraform-gcp-k8s.html
 
