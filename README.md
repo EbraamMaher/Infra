@@ -47,15 +47,17 @@ at the end of infra structure creation you will get 2 gcloud commands:
 1- install docker  : https://docs.docker.com/engine/install/debian/
 2- install keubctl : https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
 
-###### check :
-![App Screenshot](https://github.com/EbraamMaher/Infra/blob/master/pictures/4.png)
-![App Screenshot](https://github.com/EbraamMaher/Infra/blob/master/pictures/5.png)
 ###### then authenticate your account : 
 ```gcloud
    gcloud auth login
 ```
 
 ###### then connect to the cluster using the *2nd command printed out* after terraform created all resources.
+
+
+###### check :
+![App Screenshot](https://github.com/EbraamMaher/Infra/blob/master/pictures/4.png)
+![App Screenshot](https://github.com/EbraamMaher/Infra/blob/master/pictures/5.png)
 
 ##### deploy jenkins as a pod in a dedicated namespace : 
 
