@@ -40,4 +40,4 @@ by getting the external ip and port you can access the app :
 ```
 ## Screenshots
 
-![App Screenshot](Screenshot (1483).png)
+![App Screenshot](https://github.com/EbraamMaher/Infra/blob/master/Screenshot%20(1483).png)
