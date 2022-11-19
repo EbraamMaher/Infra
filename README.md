@@ -8,10 +8,11 @@
 ![App Screenshot](https://github.com/EbraamMaher/Infra/blob/master/Picture1.png)
 
 	
+
 ## The big picture
 
-pictures credits :
-#### Creditis : https://cloud.google.com/blog/products/devops-sre/guide-to-creating-custom-base-images-for-gcp-with-jenkins-and-packer
+
+#### pictures Creditis : https://cloud.google.com/blog/products/devops-sre/guide-to-creating-custom-base-images-for-gcp-with-jenkins-and-packer
    #### https://janpreet.com/tech/2020/12/08/terraform-gcp-k8s.html
 
 ![App Screenshot](https://github.com/EbraamMaher/Infra/blob/master/Screenshot%20(1483).png)
