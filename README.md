@@ -10,21 +10,21 @@
 
 ## plan
 
-### A- Infra structure creation using terraform:
+### I- Infra structure creation using terraform:
         1- craete dedicated project and initialize terraform with it.
         2- create network and vm instance “bastion”.
         3- create GKE with master and 1 worker node.
 
-### B- deploy Jenkins [master and agent] within a dedicated namespace:
+### II- deploy Jenkins [master and agent] within a dedicated namespace:
 	      1- create master and slave deployments inside worker node.
  	      2- configure the agent with master.
 	      3- create a pipline to work with my GitHub app repo. To provide build and deploy for each change in the application code.
 
 
 
-## Deployment
+## detailed steps: 
 
-To deploy this project run
+### infrastructure phase:
 
 ```terraform
   run the following commands :
@@ -35,6 +35,8 @@ at the end of infra structure creation you will get 2 gcloud commands:
 
 1- to ssh to bastion
 2- to connect to cluster 
+
+![App Screenshot](https://github.com/EbraamMaher/Infra/blob/master/pictures/3.png)
 
 after ssh to vm you have to install these tools:
 1- docker
