@@ -7,6 +7,15 @@
 ## Mission
 ![App Screenshot](https://github.com/EbraamMaher/Infra/blob/master/Picture1.png)
 
+	
+## The big picture
+
+pictures credits :
+#### Creditis : https://cloud.google.com/blog/products/devops-sre/guide-to-creating-custom-base-images-for-gcp-with-jenkins-and-packer
+   #### https://janpreet.com/tech/2020/12/08/terraform-gcp-k8s.html
+
+![App Screenshot](https://github.com/EbraamMaher/Infra/blob/master/Screenshot%20(1483).png)
+
 
 ## plan
 
@@ -108,11 +117,3 @@ and if not running start it :
 or /etc/init.d/ssh start
 also you may have issue with docker.sock and can solve it by changing permission for /var/run/docke.sock	
 	
-	
-## Project graph
-
-pictures credits :
-#### Creditis : https://cloud.google.com/blog/products/devops-sre/guide-to-creating-custom-base-images-for-gcp-with-jenkins-and-packer
-   #### https://janpreet.com/tech/2020/12/08/terraform-gcp-k8s.html
-
-![App Screenshot](https://github.com/EbraamMaher/Infra/blob/master/Screenshot%20(1483).png)
