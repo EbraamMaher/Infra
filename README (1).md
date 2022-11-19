@@ -2,6 +2,12 @@
 # Graduation project ITI
 
 
+
+
+## Mission
+![App Screenshot](https://github.com/EbraamMaher/Infra/blob/master/Picture1.png)
+
+
 ## plan
 
 ### A- Infra structure creation using terraform:
@@ -14,11 +20,6 @@
  	      2- configure the agent with master.
 	      3- create a pipline to work with my GitHub app repo. To provide build and deploy for each change in the application code.
 
-
-
-
-## Mission
-![App Screenshot](https://github.com/EbraamMaher/Infra/blob/master/Picture1.png)
 
 
 ## Deployment
