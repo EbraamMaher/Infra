@@ -6,7 +6,8 @@
 
 
 
-
+## Mission
+![App Screenshot](https://github.com/EbraamMaher/Infra/blob/master/Picture1.png)
 
 
 ## Deployment
@@ -38,6 +39,6 @@ by getting the external ip and port you can access the app :
   kubectl get pods -n app
   kubectl get svc -n app
 ```
-## Screenshots
+## Project graph
 
 ![App Screenshot](https://github.com/EbraamMaher/Infra/blob/master/Screenshot%20(1483).png)
