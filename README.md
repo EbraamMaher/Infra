@@ -57,7 +57,7 @@ at the end of infra structure creation you will get 2 gcloud commands:
 
 ###### check :
 ![App Screenshot](https://github.com/EbraamMaher/Infra/blob/master/pictures/4.png)
-![App Screenshot](https://github.com/EbraamMaher/Infra/blob/master/pictures/5.png)
+
 
 ##### deploy jenkins as a pod in a dedicated namespace : 
 
