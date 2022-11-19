@@ -62,34 +62,51 @@ at the end of infra structure creation you will get 2 gcloud commands:
 
 ##### deploy jenkins as a pod in a dedicated namespace : 
 
-
+##### Jenkins Master
 ```kubectl
 	kubectl create ns ns-jenkins
 	kubectl apply -f master.yaml  
 	keubctl get svc -n ns-jenkins
 ```
 
-then access jenkins using url : http://external ip :port
-to get initial password for jenknis : kubect logs <pod-name> -n ns-jenkins
+###### then access jenkins using url : http://external ip :port
 
-then install plugins and put credentails for docker hub and gcloud which we will need later
-then access jenkins using url : http://external ip :port
-to get initial password for jenknis : kubect logs <pod-name> -n ns-jenkins
+###### check :
+![App Screenshot](https://github.com/EbraamMaher/Infra/blob/master/pictures/6.png)
+
+
+to get initial password for jenknis : 
+
+```kubectl
+	kubect logs <pod-name> -n ns-jenkins
+```
+
+then install plugins and put credentails for *docker hub* and *GCP* which we will need later
+
+###### now access jenkins using url : *http://external_ip:port*
+
+*note*: to get initial password for jenknis : kubect logs <pod-name> -n ns-jenkins
 
 ###### then install plugins and put credentails for docker hub and gcloud which we will need later 
 
 	
+##### Jenkins Agent
 
+we now need to create and build agent *noting that it needs many tools like gcloud , docker,kubernetes "helm if needed " and ssh
 
-###### after that Deployment stage using kubectl
+so,now we have to login to docker hub *since we need to push agent image to allow GKE to pull it when deploying the agent*
 
-by getting the external ip and port you can access the app :
+then build the image and push it to docker hub 
+kubectl apply -f slave.yaml  
+kubectl exec -it <pod-name> bash -n ns-jenkins
+now we can configure the agnet
 
-```kuebctl 
-  kubectl get pods -n app
-  kubectl get svc -n app
-```
-	
+==note : have to check that ssh is running using this command 
+      service ssh status
+and if not running start it : 
+     service ssh start
+or /etc/init.d/ssh start
+also you may have issue with docker.sock and can solve it by changing permission for /var/run/docke.sock	
 	
 	
 ## Project graph
