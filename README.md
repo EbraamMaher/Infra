@@ -48,9 +48,9 @@ at the end of infra structure creation you will get 2 gcloud commands:
 2- install keubctl : https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
 
 ###### then authenticate your account : 
-            ```gcloud
-	    	gcloud auth login
-	    ```
+```gcloud
+   gcloud auth login
+```
 
 ###### then connect to the cluster using the *2nd command printed out* after terraform created all resources.
 
