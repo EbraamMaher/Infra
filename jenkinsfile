@@ -6,7 +6,7 @@ pipeline {
         stage('Build') {
           steps {
             script {
-              withCredentials([usernamePassword(credentialsId: 'docker', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) { 
+              withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) { 
 
               sh """
                 docker login -u ${USERNAME} -p ${PASSWORD}
@@ -24,7 +24,7 @@ pipeline {
         stage('Deploy') {
           steps{
             script {
-                 withCredentials([file(credentialsId: 'gcp-credentials', variable: 'gc')]){
+                 withCredentials([file(credentialsId: 'gcloud', variable: 'gc')]){
                             sh """
                              gcloud auth activate-service-account --key-file="$gc"
                              gcloud container clusters get-credentials app-cluster --region europe-west3 --project gproject-368612
