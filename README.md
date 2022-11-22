@@ -6,37 +6,37 @@
 
 
 
-## Mission
+### Mission
 ![App Screenshot](https://github.com/EbraamMaher/Infra/blob/master/Picture1.png)
 
 	
 
-## The big picture
+### The big picture
 
 
 #### pictures Creditis : https://cloud.google.com/blog/products/devops-sre/guide-to-creating-custom-base-images-for-gcp-with-jenkins-and-packer
-   #### https://janpreet.com/tech/2020/12/08/terraform-gcp-k8s.html
+#### https://janpreet.com/tech/2020/12/08/terraform-gcp-k8s.html
 
 ![App Screenshot](https://github.com/EbraamMaher/Infra/blob/master/Screenshot%20(1483).png)
 
 
-## plan
+### plan
 
-### I- Infra structure creation using terraform:
+#### I- Infra structure creation using terraform:
         1- craete dedicated project and initialize terraform with it.
         2- create network and vm instance “bastion”.
         3- create GKE with master and 1 worker node.
 
-### II- deploy Jenkins [master and agent] within a dedicated namespace:
+#### II- deploy Jenkins [master and agent] within a dedicated namespace:
 	      1- create master and slave deployments inside worker node.
  	      2- configure the agent with master.
 	      3- create a pipline to work with my GitHub app repo. To provide build and deploy for each change in the application code.
 
 
 
-## detailed steps: 
+### detailed steps: 
 
-### infrastructure phase:
+#### infrastructure phase:
 
 ```terraform
   run the following commands :
